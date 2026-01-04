@@ -1,0 +1,130 @@
+    <!DOCTYPE html>
+    <html lang="zh-TW">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>潮流商店 | 時尚服飾</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+        <header>
+            <nav class="category-nav">
+                <button class="active" data-filter="all">全部</button>
+                <button data-filter="hot">熱門</button>
+                <button data-filter="clothes">衣服</button>
+                <button data-filter="pants">褲子</button>
+                <button data-filter="shoes">鞋子</button>
+                <button data-filter="jackets">外套</button>
+            </nav>
+            <div class="user-actions">
+                <span id="member-btn">👤 會員</span>
+                <span id="cart-btn">🛒 購物車 (<span id="cart-count">0</span>)</span>
+            </div>
+        </header>
+
+        <main>
+            <section class="product-grid" id="product-list">
+                </section>
+
+            <div id="product-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close-btn">&times;</span>
+                    <div class="modal-body">
+                        <div class="viewer-container">
+                            <h3>請向下捲動內容</h3>
+                            <div id="rotate-viewer">
+                                <img id="spin-image" src="shoes_3.webp" alt="Product Spin">
+                            </div>
+                        </div>
+                        <div class="product-info">
+                        <h2 id="modal-title">Nike Air Force 1 Low 異形液態銀</h2>
+                        <div class="price">$5,600</div>
+                        <div id="modal-description" style="margin: 15px 0; line-height: 1.6; white-space: pre-wrap; color: #666;"></div>
+</div>
+    <div id="color-selector-container" style="margin-bottom: 15px; display: none;">
+        <span style="display: block; margin-bottom: 5px;">顏色：</span>
+        <div id="color-options" style="display: flex; gap: 10px;"></div>
+    </div>
+                        
+    </div>
+    <div class="quantity-selector">
+    <span>數量：</span>
+    <div class="qty-controls">
+        <button type="button" id="qty-minus" class="qty-btn">−</button>
+        <input type="number" id="qty-input" value="1" min="1" readonly>
+        <button type="button" id="qty-plus" class="qty-btn">+</button>
+    </div>
+</div>
+
+<button class="add-to-cart">加入購物車</button>
+    
+</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="checkout-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-checkout">&times;</span>
+        
+        <h2 style="margin-bottom: 15px;">您的購物車品項</h2>
+        <span class="close-checkout" onclick="document.getElementById('checkout-modal').style.display='none'">&times;</span>
+        <div id="cart-items-container" style="background: #f9f9f9; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+            <ul id="cart-items-list" style="list-style: none; padding: 0; margin: 0;">
+                </ul>
+            <hr style="margin: 10px 0; border: 0; border-top: 1px solid #ddd;">
+            <div style="text-align: right; font-weight: bold; font-size: 1.2rem;">
+                總計：$<span id="cart-total-price">0</span>
+            </div>
+        </div>
+
+        <h2 style="margin-bottom: 15px;">結帳流程</h2>
+        <form id="checkout-form">
+            <label>送貨方式：</label>
+            <select required>   
+                <option value="store">門市自取</option>
+                <option value="delivery">宅配到府</option>
+            </select>
+            
+            <label>付款方式：</label>
+            <select required>
+                <option value="card">信用卡</option>
+                <option value="cod">貨到付款</option>
+            </select>
+            
+            <button type="submit" class="submit-order">確認購買</button>
+        </form>
+    </div>
+</div>
+            <div id="member-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-member">&times;</span>
+        
+        <div id="auth-section">
+            <h2 id="auth-title">會員登入</h2>
+            <form id="auth-form">
+                <input type="email" id="user-email" placeholder="電子郵件" required style="width:100%; padding:10px; margin:10px 0;">
+                <input type="password" id="user-password" placeholder="密碼" required style="width:100%; padding:10px; margin:10px 0;">
+                <button type="submit" id="auth-submit" class="submit-order">登入</button>
+            </form>
+            <p style="text-align:center; margin-top:10px;">
+                <a href="#" id="switch-auth">還沒有帳號？點此註冊</a>
+            </p>
+        </div>
+
+        <div id="user-section" style="display:none;">
+            <h2>歡迎回來，<span id="display-user"></span></h2>
+            <hr style="margin:20px 0;">
+            <h3>您的購買紀錄</h3>
+            <ul id="purchase-history" style="list-style:none; padding:0; margin-top:10px;">
+                </ul>
+            <button id="logout-btn" style="background:#ccc; color:#000; border:none; padding:10px; width:100%; margin-top:20px; cursor:pointer;">登出</button>
+        </div>
+    </div>
+</div>
+        </main>
+
+        <script src="script.js"></script>
+    </body>
+    </html>
